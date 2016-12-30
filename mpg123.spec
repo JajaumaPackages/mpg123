@@ -3,7 +3,7 @@
 
 Name:           mpg123
 Version:        1.23.8
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Real time MPEG 1.0/2.0/2.5 audio player/decoder for layers 1, 2 and 3
 
 License:        LGPLv2+
@@ -32,7 +32,7 @@ Summary:        Pulseaudio output plug-in for %{name}
 BuildRequires:  pkgconfig(libpulse-simple)
 Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %if 0%{?fedora} || 0%{?rhel} >= 8
-Supplements:    pulseaudio%{?_isa}
+Supplements:    (mpg123%{?_isa} and pulseaudio%{?_isa})
 %endif
 
 %description plugins-pulseaudio %{_description}
@@ -44,7 +44,7 @@ Summary:        JACK output plug-in for %{name}
 BuildRequires:  pkgconfig(jack)
 Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %if 0%{?fedora} || 0%{?rhel} >= 8
-Supplements:    jack-audio-connection-kit%{?_isa}
+Supplements:    (mpg123%{?_isa} and jack-audio-connection-kit%{?_isa})
 %endif
 Obsoletes:      %{name}-plugins-extras < 1.23.4-1
 
@@ -57,7 +57,7 @@ Summary:        PortAudio output plug-in for %{name}
 BuildRequires:  pkgconfig(portaudio-2.0)
 Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %if 0%{?fedora} || 0%{?rhel} >= 8
-Supplements:    portaudio%{?_isa}
+Supplements:    (mpg123%{?_isa} and portaudio%{?_isa})
 %endif
 
 %description plugins-portaudio %{_description}
@@ -142,6 +142,9 @@ rm %{buildroot}%{_libdir}/*.la
 %{_libdir}/pkgconfig/lib%{out}.pc
 
 %changelog
+* Fri Dec 30 2016 Kevin Kofler <Kevin@tigcc.ticalc.org> - 1.23.8-4
+- Fix subpackages' Supplements tags (#1397479)
+
 * Fri Nov 11 2016 Wim Taymans <wtaymans@redhat.com> - 1.23.8-3
 - Remove pointless Enhances:
 - Fix splelling mistake
