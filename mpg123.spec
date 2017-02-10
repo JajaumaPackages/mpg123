@@ -3,7 +3,7 @@
 
 Name:           mpg123
 Version:        1.23.8
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Real time MPEG 1.0/2.0/2.5 audio player/decoder for layers 1, 2 and 3
 
 License:        LGPLv2+
@@ -142,6 +142,9 @@ rm %{buildroot}%{_libdir}/*.la
 %{_libdir}/pkgconfig/lib%{out}.pc
 
 %changelog
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.23.8-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Fri Dec 30 2016 Kevin Kofler <Kevin@tigcc.ticalc.org> - 1.23.8-4
 - Fix subpackages' Supplements tags (#1397479)
 
