@@ -2,8 +2,8 @@
 %global fmt fmt123
 
 Name:           mpg123
-Version:        1.23.8
-Release:        7%{?dist}
+Version:        1.25.4
+Release:        1%{?dist}
 Summary:        Real time MPEG 1.0/2.0/2.5 audio player/decoder for layers 1, 2 and 3
 
 License:        LGPLv2+
@@ -142,6 +142,9 @@ rm %{buildroot}%{_libdir}/*.la
 %{_libdir}/pkgconfig/lib%{out}.pc
 
 %changelog
+* Mon Aug 07 2017 Jajauma's Packages <jajauma@yandex.ru> - 1.25.4-1
+- Update to latest upstream release
+
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.23.8-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
