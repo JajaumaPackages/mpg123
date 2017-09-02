@@ -2,7 +2,7 @@
 %global fmt fmt123
 
 Name:           mpg123
-Version:        1.25.4
+Version:        1.25.6
 Release:        1%{?dist}
 Summary:        Real time MPEG 1.0/2.0/2.5 audio player/decoder for layers 1, 2 and 3
 
@@ -142,6 +142,9 @@ rm %{buildroot}%{_libdir}/*.la
 %{_libdir}/pkgconfig/lib%{out}.pc
 
 %changelog
+* Sun Sep 03 2017 Jajauma's Packages <jajauma@yandex.ru> - 1.25.6-1
+- Update to latest upstream release
+
 * Mon Aug 07 2017 Jajauma's Packages <jajauma@yandex.ru> - 1.25.4-1
 - Update to latest upstream release
 
